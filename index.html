@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juan Felipe Alzate Vélez (frontend developer)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/profile.css" />
+    <link rel="stylesheet" href="./css/skills.css" />
+    <link rel="stylesheet" href="./css/experiences.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+
+    <script defer src="./js/app.js"></script>
+  </head>
+  <body>
+    <header class="topheader">
+      <nav class="topnav">
+        <a href="#" class="logo">
+          <img height="50" width="50" src="./img/fotoPerfil.png" alt="programador" />
+          <div>
+            Felipe Alzate<br />
+            { frontend developer }
+          </div>
+        </a>
+        <button class="open-menu" aria-label="Open Menu">
+          <img src="./img/menu-icon.png" alt="Open Menu">
+        </button>
+        <ul class="menu">
+          <button class="close-menu" aria-label="Close Menu">
+            <img src="./img/close-icon.png" alt="Close Menu">
+          </button>
+          <li><a href="#profile" class="selected">Profile</a></li>
+          <li><a href="#experience" class="">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header> 
+    <div class="horizontal-padding vertical-padding">
+      <section class="profile" id="profile">
+        <div class="profile-info">
+          <h1 class="profile-title">Hola, soy <br> Felipe Alzate</h1>
+          <p class="profile-details">
+            Systems engineering professional with seven years of experience in web development with various languages and technologies.
+          </p>
+          <button class="profile-btn">
+            Download CV
+          </button>
+        </div>
+        <span class="profile-img-section">
+          <img class="profile-img" src="img/Foto.png" alt="profile photo" >
+          <div class="profile-img-line"></div>
+        </span>
+      </section>
+    </div> 
+    
+    <section class="experiences" id="experience">
+      <img src="img/wave.svg" alt="division" class="wave">
+        <div class="experiences-body">
+          <h2 class="experiences-title">Experiences</h2>
+          <div class="experiences-grid">
+            
+            <div class="empty"></div>
+            <div class="line"></div>
+            <div class="experience experience_right">
+              <div class="experience-date">2022</div>
+              <div class="experience-company">Globant</div>
+              <div class="experience-position">Ssr Web UI developer</div>
+              <div class="experience-description">
+                Internal project: Develop of the UI using Reactjs of a sport schedule project
+              </div>
+            </div>
+
+            <div class="experience experience_left">
+              <div class="experience-date">2021 - 2022</div>
+              <div class="experience-company">Ceiba Software</div>
+              <div class="experience-position">Web UI developer</div>
+              <div class="experience-description">
+                It was possible to reduce the development time of the final client through an intermediary, in this case Nubloq.
+                Facilitate technology management (It was not the core of its business) by providing the service through an intermediary.
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="empty"></div>
+
+            <div class="empty"></div>
+            <div class="line"></div>
+            <div class="experience experience_right">
+              <div class="experience-date">2022</div>
+              <div class="experience-company">Globant</div>
+              <div class="experience-position">Semi senior Web UI developer</div>
+              <div class="experience-description">
+                Internal project: Develop of the UI using Reactjs of a sport schedule project
+              </div>
+            </div>
+          </div>
+        </div>
+      <img src="img/wave.svg" alt="division" class="wave wave_bottom">
+    </section>
+
+    <div class="horizontal-padding vertical-padding">
+      <section class="skills" id="skills">
+        <h2 class="skills-title">Skills</h2>
+        <ul class="skills-list">
+          <li class="skills-skill">CSS</li>
+          <li class="skills-skill">HTML</li>
+          <li class="skills-skill">Javascript</li>
+          <li class="skills-skill">Angular</li>
+          <li class="skills-skill">React</li>
+          <li class="skills-skill">.Net framework</li>
+          <li class="skills-skill">C#</li>
+          <li class="skills-skill">SQL Server</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="horizontal-padding vertical-padding">
+      <section class="contact" id="contact">
+        <h2 class="contact-title">Contact</h2>
+        <div class="contact-details">
+          <div class="contact-details-group">
+            <p class="contact-label">Address:</p>
+            <p class="contact-text">Medellín, Colombia</p>
+          </div>
+          <div class="contact-details-group">
+            <p class="contact-label">Email:</p>
+            <p class="contact-text">jfelipe.alzate@gmail.com</p>
+          </div>
+          <div class="contact-details-group">
+            <p class="contact-text">Leave your message and I will gladly answer you as soon as possible</p>
+          </div>
+        </div>
+        <form class="contact-form">
+          <div class="contact-form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+          </div>
+          <div class="contact-form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+          </div>
+          <div class="contact-form-group">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="10" required></textarea>
+          </div>
+
+          <button class="contact-form-submit" type="submit">Send</button>
+        </form>
+        <nav class="social">
+          <ul class="social-list">
+            <li class="social-items">
+              <a href="https://twitter.com/falzate81" target="_blank">
+                <img src="img/twitter.svg" alt="Twitter">
+              </a>
+            </li>            
+            <li class="social-items">
+              <a href="https://github.com/falzatev" target="_blank">
+                <img src="img/github.svg" alt="Github">
+              </a>
+            </li>
+            <li class="social-items">
+              <a href="https://www.linkedin.com/in/juan-felipe-alzate-v%C3%A9lez-8779b298/" target="_blank">
+                <img src="img/linkedin.svg" alt="LinkedIn">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </body>
+</html>
