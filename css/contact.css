@@ -127,6 +127,6 @@
             "details form" 1fr
             "social  form" auto /
             1fr      1fr;
-        align-items: start;
+        align-items: center;
     }
 }
