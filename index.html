@@ -18,6 +18,11 @@
     <link rel="stylesheet" href="./css/experiences.css" />
     <link rel="stylesheet" href="./css/contact.css" />
 
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+    <link rel="manifest" href="./icons/site.webmanifest">
+
     <script defer src="./js/app.js"></script>
   </head>
   <body>
@@ -51,9 +56,9 @@
           <p class="profile-details">
             Systems engineering professional with seven years of experience in web development with various languages and technologies.
           </p>
-          <button class="profile-btn">
+          <a class="profile-btn" href="./HV_Juan_Felipe_Alzate_Vélez.pdf" download="">
             Download CV
-          </button>
+          </a>
         </div>
         <span class="profile-img-section">
           <img class="profile-img" src="img/Foto.png" alt="profile photo" >
@@ -187,7 +192,7 @@
             <p class="contact-text">Leave your message and I will gladly answer you as soon as possible</p>
           </div>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" name="contact" netlify>
           <div class="contact-form-group">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" required>
