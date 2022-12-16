@@ -1,6 +1,6 @@
 .topheader {
     background-color: var(--theme-color);
-    box-shadow: 0 4px 5px var(--navbar-shallow-color);
+    box-shadow: var(--navbar-shadow);
     position: sticky;
     left: 0;
     top: 0;
@@ -16,6 +16,26 @@
     padding: 10px;
 }
 
+.dark-mode-btn,
+.light-mode-btn {
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+:root[data-theme="light"] .dark-mode-btn {
+    display: none;
+}
+
+:root[data-theme="dark"] .light-mode-btn {
+    display: none;
+}
+
 /* Logo */
 
 .logo {
@@ -25,7 +45,8 @@
     gap: 10px;
     font-size: 18px;
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--accent-color);
+    margin-right: auto;
 }
 
 .logo img {
@@ -75,7 +96,7 @@
 }
 
 .menu a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 @keyframes changeWidth {
@@ -124,6 +145,7 @@
         background: none;     
         color: var(--theme-color);
         cursor: pointer;
+        color: var(--text-color);
     }
 
     .close-menu img,

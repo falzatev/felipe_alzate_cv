@@ -12,6 +12,7 @@
     width: 100%;
     position: relative;
     top: 2px;
+    color: var(--primary-color);
 }
 
 .wave_bottom {
@@ -130,63 +131,3 @@
       }
   }
 
-  /* BORRAR */
-
-  
-  .left, .right{
-    position: relative;
-    width:50%;
-    height:100%;
-    float: left;
-    display: flex;
-    align-items: center;
-    text-align: center;
-  }
-  .wrap{
-    visibility:hidden;
-  }
-  section h1{
-    font-size: 32px;
-    font-family:sans-serif;
-  }
-  section p{
-    width: 80%;
-    margin: 20px auto;
-  }
-  section h1{
-    width: 100%;
-    text-align: center;
-  }
-  .year{
-    width: 100%;
-    font-size: 100px;
-    font-weight: 600;
-    font-family: sans-serif;
-    line-height: 400px;
-    text-align: center;
-  }
-  
-  .border{
-    position: absolute;
-    top:0;
-    left:0;
-    width:50%;
-    height:0%;
-    border-right:10px solid rgb(236, 19, 19);
-  }
-  .circle{
-    position: absolute;
-    top: calc(50% - 20px);
-    left: calc(100% - 20px);
-    width: 40px;
-    height: 40px;
-    border: 6px solid black;
-    border-radius: 50%;
-    background-color: grey;
-  }
-  
-  .spacer{
-    width:100%;
-    height:400px;
-  }
-  /*HASTA ACÁ */

@@ -7,6 +7,42 @@
     --navbar-shallow-color: #E5E5E5;
     --menu-mobile-background-color: #3A4460;
 
+    --accent-color: var(--primary-color);
+    --primary-color-inverse: #000;
+    --navbar-shadow: 0 4px 5px var(--navbar-shallow-color);
+    --tag-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    --transition: 0.2s ease-in-out;
+    color-scheme: light;
+}
+
+/* @media (prefers-color-scheme: dark) { */
+    :root[data-theme="dark"] {
+        --theme-color: #0F172A;
+        --primary-color: #243043;
+        --secondary-color: #9DC8DB;
+        --text-color: rgba(255, 255, 255, 0.87);
+        --text-color-inverse: var(--text-color);
+        --navbar-shallow-color: #e5e5e5;
+        --menu-mobile-background-color: #18213e;
+
+        --accent-color: var(--secondary-color);
+        --navbar-shadow: 0 1px 5px rgba(51, 65, 85, 0.8);
+        --tag-shadow: 0 0 5px 1px #ffffff;
+        color-scheme: dark;
+    }
+
+/* } */
+
+* {
+    transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+svg {
+    transition: color var(--transition);
+}
+
+form {
+    color-scheme: light;
 }
 
 html {

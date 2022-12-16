@@ -1,16 +1,51 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juan Felipe Alzate Vélez (frontend developer)</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css" />
+    <script>
+      (function() {
+        const userTheme = localStorage.getItem('theme');
+        const darkQuery = window.matchMedia("(prefers-color-scheme: dark");
+
+        if(userTheme === 'dark' || (!userTheme && darkQuery.matches)) {
+          setTheme('dark');
+        }
+
+        darkQuery.addEventListener('change', function(e) {
+          if(!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light');
+          }
+        });
+
+        function setTheme(newTheme) {
+          document.documentElement.setAttribute('data-theme', newTheme);
+        }
+
+        window.__setUserTheme = function(newTheme) {
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme)
+        }
+
+      })();  
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
+    />
+
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/navbar.css" />
     <link rel="stylesheet" href="./css/profile.css" />
@@ -18,145 +53,261 @@
     <link rel="stylesheet" href="./css/experiences.css" />
     <link rel="stylesheet" href="./css/contact.css" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./icons">
-    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
-    <link rel="manifest" href="./icons/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./icons/site.webmanifest" />
 
     <script defer src="./js/app.js"></script>
+    <script defer src="./js/colorToggle.js"></script>
   </head>
   <body>
     <header class="topheader">
       <nav class="topnav">
         <a href="#" class="logo">
-          <img height="50" width="50" src="./img/fotoPerfil.png" alt="programador" />
+          <img
+            height="50"
+            width="50"
+            src="./img/fotoPerfil.png"
+            alt="programador"
+          />
           <div>
             Felipe Alzate<br />
             { frontend developer }
           </div>
         </a>
-        <button class="open-menu" aria-label="Open Menu">
-          <img src="./img/menu-icon.png" alt="Open Menu">
-        </button>
+        
         <ul class="menu">
           <button class="close-menu" aria-label="Close Menu">
-            <img src="./img/close-icon.png" alt="Close Menu">
+            <svg
+              width="29"
+              height="29"
+              viewBox="0 0 29 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27 2L2 27"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 2L27 27"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </button>
           <li><a href="#profile" class="selected">Profile</a></li>
           <li><a href="#experience" class="">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <button class="dark-mode-btn" aria-label="Activate dark mode">
+          <img src="./img/sun.svg" alt="">
+        </button>
+        <button class="light-mode-btn" aria-label="Activate light mode">
+          <img src="./img/moon.svg" alt="">
+        </button>       
+        <button class="open-menu" aria-label="Open Menu">
+          <svg
+            width="29"
+            height="29"
+            viewBox="0 0 29 29"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14.5H27"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2 2H27"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2 27H27"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
       </nav>
-    </header> 
+    </header>
     <div class="horizontal-padding vertical-padding">
       <section class="profile" id="profile">
         <div class="profile-info">
-          <h1 class="profile-title title">Hi, I'm  <br> Felipe Alzate</h1>
+          <h1 class="profile-title title">
+            Hi, I'm <br />
+            Felipe Alzate
+          </h1>
           <p class="profile-details">
-            Systems engineering professional with seven years of experience in web development with various languages and technologies.
+            Systems engineering professional with seven years of experience in
+            web development with various languages and technologies.
           </p>
-          <a class="profile-btn" href="./HV_Juan_Felipe_Alzate_Vélez.pdf" download="">
+          <a
+            class="profile-btn"
+            href="./HV_Juan_Felipe_Alzate_Vélez.pdf"
+            download=""
+          >
             Download CV
           </a>
         </div>
         <span class="profile-img-section">
-          <img class="profile-img" src="img/Foto.png" alt="profile photo" >
+          <img class="profile-img" src="img/Photo.png" alt="profile photo" />
           <div class="profile-img-line"></div>
         </span>
       </section>
-    </div> 
-    
+    </div>
+
     <section class="experiences" id="experience">
-      <img src="img/wave.svg" alt="division" class="wave">
-        <div class="experiences-body">
-          <h2 class="experiences-title title">Experiences</h2>
-          <div class="experiences-grid">
-            
-            <div class="empty"></div>
-            <div class="line"></div>
-            <div class="experience experience_right">
-              <div class="experience-date">2022</div>
-              <div class="experience-company">Globant</div>
-              <div class="experience-position">Ssr Web UI developer</div>
-              <div class="experience-description">
-                Internal project: Develop of the UI using Reactjs of a sport schedule project
-              </div>
+      <svg
+        viewBox="0 0 1400 54"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="wave"
+      >
+        <path
+          d="M-15.0079 22.92C354.732 63.38 953.596 -55.05 1437.13 45.63L1400 55H6.55479e-05L-15.0079 22.92Z"
+          fill="currentColor"
+        />
+      </svg>
+      <div class="experiences-body">
+        <h2 class="experiences-title title">Experiences</h2>
+        <div class="experiences-grid">
+          <div class="empty"></div>
+          <div class="line"></div>
+          <div class="experience experience_right">
+            <div class="experience-date">2022</div>
+            <div class="experience-company">Globant</div>
+            <div class="experience-position">Ssr Web UI developer</div>
+            <div class="experience-description">
+              Internal project: Develop of the UI using Reactjs of a sport
+              schedule project
             </div>
+          </div>
 
-            <div class="experience experience_left">
-              <div class="experience-date">2021 - 2022</div>
-              <div class="experience-company">Ceiba Software</div>
-              <div class="experience-position">Web UI developer</div>
-              <div class="experience-description">
-                It was possible to reduce the development time of the final client through an intermediary, in this case Nubloq.
-                <br> Facilitate technology management (It was not the core of its business) by providing the service through an intermediary.
-              </div>
+          <div class="experience experience_left">
+            <div class="experience-date">2021 - 2022</div>
+            <div class="experience-company">Ceiba Software</div>
+            <div class="experience-position">Web UI developer</div>
+            <div class="experience-description">
+              It was possible to reduce the development time of the final client
+              through an intermediary, in this case Nubloq.
+              <br />
+              Facilitate technology management (It was not the core of its
+              business) by providing the service through an intermediary.
             </div>
-            <div class="line"></div>
-            <div class="empty"></div>
+          </div>
+          <div class="line"></div>
+          <div class="empty"></div>
 
-            <div class="empty"></div>
-            <div class="line"></div>
-            <div class="experience experience_right">
-              <div class="experience-date">2020</div>
-              <div class="experience-company">Newsoft S.A.S (Ubica)</div>
-              <div class="experience-position">Fullstack developer</div>
-              <div class="experience-description">
-                A logistics management system is created, improving interaction with customers in managing their merchandise inventory.
-              </div>
+          <div class="empty"></div>
+          <div class="line"></div>
+          <div class="experience experience_right">
+            <div class="experience-date">2020</div>
+            <div class="experience-company">Newsoft S.A.S (Ubica)</div>
+            <div class="experience-position">Fullstack developer</div>
+            <div class="experience-description">
+              A logistics management system is created, improving interaction
+              with customers in managing their merchandise inventory.
             </div>
-            
-            <div class="experience experience_left">
-              <div class="experience-date">2018 - 2020</div>
-              <div class="experience-company">Newsoft S.A.S (TDM Transportes)</div>
-              <div class="experience-position">Fullstack developer</div>
-              <div class="experience-description">
-                A panic button system was implemented for theft incidents that could be suffered by drivers, generating a tracking of the location of the vehicle in real time.
-                <br> The optimization of management times in the company is achieved by updating the systems for managing trips and controlling driver reporting points.
-                <br> Maintaining the software already developed inside the company.
-              </div>
-            </div>
-            <div class="line"></div>
-            <div class="empty"></div>
+          </div>
 
-            <div class="empty"></div>
-            <div class="line"></div>
-            <div class="experience experience_right">
-              <div class="experience-date">2017 - 2018</div>
-              <div class="experience-company">Newsoft S.A.S (Ser+)</div>
-              <div class="experience-position">Web UI developer</div>
-              <div class="experience-description">
-                A more interactive system was obtained, with better response time, which allowed a better appropriation of the system by students and tutors by allowing the review of papers more efficiently for both students and tutors.
-              </div>
-            </div>  
-            
-            <div class="experience experience_left">
-              <div class="experience-date">2016 - 2017</div>
-              <div class="experience-company">Newsoft S.A.S (Echez group)</div>
-              <div class="experience-position">Fullstack developer</div>
-              <div class="experience-description">
-                Microsoft license forms were digitalized.
-                <br> Optimized Microsoft licensing information collection time by E-chez group.
-              </div>
+          <div class="experience experience_left">
+            <div class="experience-date">2018 - 2020</div>
+            <div class="experience-company">
+              Newsoft S.A.S (TDM Transportes)
             </div>
-            <div class="line"></div>
-            <div class="empty"></div>
+            <div class="experience-position">Fullstack developer</div>
+            <div class="experience-description">
+              A panic button system was implemented for theft incidents that
+              could be suffered by drivers, generating a tracking of the
+              location of the vehicle in real time.
+              <br />
+              The optimization of management times in the company is achieved by
+              updating the systems for managing trips and controlling driver
+              reporting points. <br />
+              Maintaining the software already developed inside the company.
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="empty"></div>
 
-            <div class="empty"></div>
-            <div class="line"></div>
-            <div class="experience experience_right">
-              <div class="experience-date">2015 - 2016</div>
-              <div class="experience-company">Servicios en Web (Qino)</div>
-              <div class="experience-position">Web UI developer</div>
-              <div class="experience-description">
-                An initial system is created that improves interaction between students and tutors for delivery and feedback of students' work.
-              </div>
-            </div> 
-                        
+          <div class="empty"></div>
+          <div class="line"></div>
+          <div class="experience experience_right">
+            <div class="experience-date">2017 - 2018</div>
+            <div class="experience-company">Newsoft S.A.S (Ser+)</div>
+            <div class="experience-position">Web UI developer</div>
+            <div class="experience-description">
+              A more interactive system was obtained, with better response time,
+              which allowed a better appropriation of the system by students and
+              tutors by allowing the review of papers more efficiently for both
+              students and tutors.
+            </div>
+          </div>
+
+          <div class="experience experience_left">
+            <div class="experience-date">2016 - 2017</div>
+            <div class="experience-company">Newsoft S.A.S (Echez group)</div>
+            <div class="experience-position">Fullstack developer</div>
+            <div class="experience-description">
+              Microsoft license forms were digitalized.
+              <br />
+              Optimized Microsoft licensing information collection time by
+              E-chez group.
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="empty"></div>
+
+          <div class="empty"></div>
+          <div class="line"></div>
+          <div class="experience experience_right">
+            <div class="experience-date">2015 - 2016</div>
+            <div class="experience-company">Servicios en Web (Qino)</div>
+            <div class="experience-position">Web UI developer</div>
+            <div class="experience-description">
+              An initial system is created that improves interaction between
+              students and tutors for delivery and feedback of students' work.
+            </div>
           </div>
         </div>
-      <img src="img/wave.svg" alt="division" class="wave wave_bottom">
+      </div>
+      <svg
+        viewBox="0 0 1400 54"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="wave wave_bottom"
+      >
+        <path
+          d="M-15.0079 22.92C354.732 63.38 953.596 -55.05 1437.13 45.63L1400 55H6.55479e-05L-15.0079 22.92Z"
+          fill="currentColor"
+        />
+      </svg>
     </section>
 
     <div class="horizontal-padding vertical-padding">
@@ -193,17 +344,20 @@
             <p class="contact-text">(57+) 3162247894</p>
           </div>
           <div class="contact-details-group">
-            <p class="contact-text">Leave your message and I will gladly answer you as soon as possible</p>
+            <p class="contact-text">
+              Leave your message and I will gladly answer you as soon as
+              possible
+            </p>
           </div>
         </div>
         <form class="contact-form" name="contact" netlify>
           <div class="contact-form-group">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" required>
+            <input type="text" name="name" id="name" required />
           </div>
           <div class="contact-form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" id="email" required />
           </div>
           <div class="contact-form-group">
             <label for="message">Message</label>
@@ -218,15 +372,18 @@
               <a href="https://twitter.com/falzate81" target="_blank">
                 <img src="img/twitter.svg" alt="Twitter">
               </a>
-            </li>  -->          
+            </li>  -->
             <li class="social-items">
               <a href="https://github.com/falzatev" target="_blank">
-                <img src="img/github.svg" alt="Github">
+                <img src="img/github.svg" alt="Github" />
               </a>
-            </li> 
+            </li>
             <li class="social-items">
-              <a href="https://www.linkedin.com/in/juan-felipe-alzate-v%C3%A9lez-8779b298/" target="_blank">
-                <img src="img/linkedin.svg" alt="LinkedIn">
+              <a
+                href="https://www.linkedin.com/in/juan-felipe-alzate-v%C3%A9lez-8779b298/"
+                target="_blank"
+              >
+                <img src="img/linkedin.svg" alt="LinkedIn" />
               </a>
             </li>
           </ul>
@@ -237,5 +394,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="./js/gsapAnimations,js"></script>
   </body>
 </html>
