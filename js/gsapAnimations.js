@@ -6,7 +6,7 @@ function animateFrom(elem, direction) {
     direction = direction || 1;
     var x = 0,
         y = direction * 100;
-    if(elem.classList.contains("experience_left")) {
+    if(elem.classList.contains("experience_left") || elem.classList.contains("profile-details")) {
       x = -100;
       y = 0;
     } else if (elem.classList.contains("experience_right")) {
@@ -52,6 +52,30 @@ function animateFrom(elem, direction) {
             onEnterBack: function() { animateFrom(elem, -1) },
             onLeave: function() { hide(elem) }
         })
-    })
+    });
+    
+    gsap.utils.toArray('.profile-details').forEach((elem) => {
+        hide(elem);
+  
+        ScrollTrigger.create({
+            trigger: elem,
+            onEnter: function() { animateFrom(elem, -1) },
+            onEnterBack: function() { animateFrom(elem) },
+            onLeave: function() { hide(elem) }
+        })
+    });
+    
+    gsap.utils.toArray('.experience-date').forEach((elem) => {
+        hide(elem);
+  
+        ScrollTrigger.create({
+            trigger: elem,
+            onEnter: function() { animateFrom(elem, -1) },
+            onEnterBack: function() { animateFrom(elem) },
+            onLeave: function() { hide(elem) }
+        })
+    });
   });
+
+
   
