@@ -130,3 +130,10 @@
         align-items: center;
     }
 }
+
+@media (max-width: 280px) {
+    .horizontal-padding {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+}
