@@ -17,7 +17,8 @@
 }
 
 .dark-mode-btn,
-.light-mode-btn {
+.light-mode-btn,
+.flag-icon {
     border: none;
     padding: 0;
     background: none;
@@ -34,6 +35,10 @@
 
 :root[data-theme="dark"] .light-mode-btn {
     display: none;
+}
+
+.flag-icon img {
+    width: 30px;
 }
 
 /* Logo */
@@ -175,5 +180,9 @@
     .menu a:hover,
     .menu a.selected {
         color: var(--secondary-color);
+    }
+
+    .flag-icon {
+        justify-content: flex-start;
     }
 }
